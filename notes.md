@@ -63,6 +63,25 @@ Temporary Ignores
 - `$ git update-index --assume-unchanged filename`
 - `$ git update-index --no-assume-unchanged filename`
 
+# Cloning Repositories
+
+Git supports many cloning protocols
+
+- ssh (most common and secure)
+    - `$ git clone ssh://user@server:reponame.git`
+    - `$ git clone user@server:reponame.git`
+- git (often peer to peer and read only)
+    - `$ git clone git://server/reponame.git`
+- https
+    - `$ git clone https://server/reponame.git`
+- file
+    - `$ git clone file://myrepos/reponame`
+    - `$ git clone /myrepos/reponame`
+
+We can specify the different name when cloning:
+
+- `$ git clone user@server:reponame.git aliasname`
+
 # Branch of Git
 
 Default branch of any git repo is **master**.
