@@ -56,6 +56,7 @@ Remove file from staged phase
 Ignore files from repo
 
 - Create `.gitignore` file and add patterns in it
+- `*.log` and `**/*.log` (the latter one ignores any `*.log` files in any sub-directories)
 
 
 # Branch of Git
