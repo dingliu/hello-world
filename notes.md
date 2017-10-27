@@ -58,6 +58,10 @@ Ignore files from repo
 - Create `.gitignore` file and add patterns in it
 - `*.log` and `**/*.log` (the latter one ignores any `*.log` files in any sub-directories)
 
+Temporary Ignores
+
+- `$ git update-index --assume-unchanged filename`
+- `$ git update-index --no-assume-unchanged filename`
 
 # Branch of Git
 
