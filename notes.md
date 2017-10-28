@@ -125,7 +125,33 @@ Display the difference between two commits in patch format
 
 - `$ git log HEAD~4..HEAD~2 -p`
 
+Add modifications and commit at the same time
 
+- `$ git commit -a -m 'commit message'` (can't track changes other than file modifications)
+
+What get hashed
+
+- blob
+- tree
+- commit
+- tag
+
+Author & committer in git
+
+Commit can has parent(s), or nil as parent for the initial commit
+
+# Branching
+
+- When should you branch: always branch.
+- Branching isolates volatile work.
+- Categorize by lifetime
+    + Short lived
+    + Feature
+    + Release
+
+Create new branches
+
+- `$ git remote -v` show more info about remote repo
 
 
 # Branch of Git
