@@ -145,14 +145,13 @@ Commit can has parent(s), or nil as parent for the initial commit
 - When should you branch: always branch.
 - Branching isolates volatile work.
 - Categorize by lifetime
-    + Short lived
-    + Feature
-    + Release
+    - Short lived
+    - Feature
+    - Release
 
 Create new branches
 
 - `$ git remote -v` show more info about remote repo
-
 
 # Branch of Git
 
