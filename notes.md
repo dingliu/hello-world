@@ -147,13 +147,14 @@ Default branch of any git repo is **master**.
 - When should you branch: always branch.
 - Branching isolates volatile work.
 - Categorize by lifetime
-    + Short lived
-    + Feature
-    + Release
+    - Short lived
+    - Feature
+    - Release
 
 Create new branches
 
 - `$ git remote -v` show more info about remote repo
+<<<<<<< HEAD
 - `$ git branch idea-a` create a new branch `idea-a`
     + then `$ git checkout idea-a` switch to this branch
 - `$ git checkout -b idea-b` create and switch to branch `idea-b`
@@ -215,3 +216,10 @@ Create new branches
 - Only on local machine, local history not being shared out yet.
 - You can rebase frequently with remote, to keep the effort small
 - 
+=======
+
+# Branch of Git
+
+Default branch of any git repo is **master**.
+
+>>>>>>> cc40113f1274b03839af2a61487b171288a73ee0
