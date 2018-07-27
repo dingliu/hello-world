@@ -140,7 +140,9 @@ Author & committer in git
 
 Commit can has parent(s), or nil as parent for the initial commit
 
-# Branching
+# Branching of Git
+
+Default branch of any git repo is **master**.
 
 - When should you branch: always branch.
 - Branching isolates volatile work.
@@ -152,9 +154,64 @@ Commit can has parent(s), or nil as parent for the initial commit
 Create new branches
 
 - `$ git remote -v` show more info about remote repo
+- `$ git branch idea-a` create a new branch `idea-a`
+    + then `$ git checkout idea-a` switch to this branch
+- `$ git checkout -b idea-b` create and switch to branch `idea-b`
+- `$ git branch` display current branches
+- `$ git branch --set-upstream branch-a origin/branch-a` set the upstream for a local branch
+- `$ git checkout e79ff9e` checkout to certain commit, 'detached HEAD' state
+    + Then `$ git branch yesterday` start a branch 'yesterday' from that certain commit.
+    + Or, `$ git branch yesterday e79ff9e` also do the same thing.
+- `$ git log --graph --pretty=oneline` show git log in a 'graphical' way
 
+# Remotes
 
-# Branch of Git
+- Remotes are just **symbolic names**
+- You can have as **many** as you like
+- The default name is **origin**, if you've cloned
+- `$ git remote -v` verbosely showing remote info
+- `$ git remote add another https://username@gitrepo.com/reponame.git` add another remote
+- Remote branches are locally **immutable**
+- **Bidirectional** code transmission
+    + clone
+    + pull (fetch and merge)
+    + fetch (without merge)
+    + push
+- `$ git diff idea-a origin/idea-a` showing diff between local branch and the branch fetched from remote, without merge first
+    + `$ git diff master^^ origin/idea-a` showing diff between local master branch, 2 commits back to current HEAD, with remote idea-a branch
+    + `$ git diff --word-diff` showing diff word by word
 
-Default branch of any git repo is **master**.
+# Tagging
 
+- **True** tagging and **cheap** tags
+- Tagging at **each level** of approval
+- **Light** and **object** tag types
+    + Comments attached to tag
+    + Actual object (commit) for object tag
+    + GPG signing
+- `$ git tag <TAGNAME>` default
+- `$ git tag -a <TAGNAME>` heavy weight
+- By default, tags are not pushed.
+    + `$ git push --tags` push with tags
+- `$ git tag -a` needs commit message
+    + Heavy tag also not pushed by default
+- Pull contains tags by default
+- `$ git branch -d branch_name` delete a branch
+- `$ git help tag` show the man page for `help` command
+- `$ git tag -d TAG_NAME` delete the tag
+- By default, git doesn't allow tags with the same name
+- Tags (heavy or light) can be applied to the same commit
+
+# Merging
+
+- `$ git checkout master` then `$ git merge idea-a`, merge branch `idea-a` into branch `master`
+- `$ git diff` display the diffs
+- `$ git checkout --ours -- confilict.filename`
+- `$ git checkout --theirs -- conflict.filename`
+- `$ git add conflict.filename` then commit and push
+
+# Rebase
+
+- Only on local machine, local history not being shared out yet.
+- You can rebase frequently with remote, to keep the effort small
+- 
